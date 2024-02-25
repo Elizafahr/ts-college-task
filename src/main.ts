@@ -69,7 +69,7 @@ function handleInput() {
 // Назначаем обработчик событий на ввод числа
 inputElement.addEventListener("input", handleInput);
 
-
+// ЗАДАНИЕ 2
 document.querySelector<HTMLDivElement>("#sec")!.innerHTML = `
   <div>
   <DIV>
@@ -83,7 +83,6 @@ document.querySelector<HTMLDivElement>("#sec")!.innerHTML = `
   </DIV>
   </div>
 `;
-// ЗАДАНИЕ 2
 document.getElementById("countButton")!.addEventListener("click", function() {
     const inputText = (<HTMLInputElement> document.getElementById("inputText")).value;
     const words = inputText.split(" ");
@@ -107,6 +106,7 @@ document.getElementById("countButton")!.addEventListener("click", function() {
     document.getElementById("result")!.innerHTML = result;
 });
 
+// ЗАДАНИЕ 3
 document.querySelector<HTMLDivElement>("#third")!.innerHTML = `
   <div>
   <DIV>
@@ -129,22 +129,16 @@ const wordInput = document.getElementById("wordInput") as HTMLInputElement;
 const addBtn = document.getElementById("addBtn");
 const wordList = document.getElementById("wordList");
 
-// Определяем массив с часто употребляемыми словами
-const commonWords = ["добрый день", "спасибо", "пожалуйста", "к сожалению"];
+ const commonWords = ["добрый день", "спасибо", "пожалуйста", "к сожалению"];
 
 // Функция обработки события нажатия кнопки
 function addWord() {
     const newWord = wordInput.value;
-    // Добавляем новое слово в массив
-    commonWords.push(newWord);
-    // Создаем новый элемент li с добавленным словом
-    const newListItem = document.createElement("li");
+     commonWords.push(newWord);
+     const newListItem = document.createElement("li");
     newListItem.textContent = newWord;
-    // Добавляем новый элемент в список
-    wordList.appendChild(newListItem);
-    // Очищаем поле ввода
+     wordList.appendChild(newListItem);
     wordInput.value = "";
 }
 
-// Назначаем обработчик события нажатия кнопки
-addBtn.addEventListener("click", addWord);
+ addBtn.addEventListener("click", addWord);
